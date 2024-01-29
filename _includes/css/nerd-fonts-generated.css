@@ -26678,6 +26678,9 @@
 .nf-pl-left_hard_divider:before {
   content: "\e0b0";
 }
+.nf-pl-left_hard_divider_inverse:before {
+  content: "\e0d7";
+}
 .nf-pl-left_soft_divider:before {
   content: "\e0b1";
 }
@@ -26689,6 +26692,9 @@
 }
 .nf-pl-right_hard_divider:before {
   content: "\e0b2";
+}
+.nf-pl-right_hard_divider_inverse:before {
+  content: "\e0d6";
 }
 .nf-pl-right_soft_divider:before {
   content: "\e0b3";
