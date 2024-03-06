@@ -215,7 +215,7 @@ jobs:
           ./archive-fonts.sh "${{ matrix.font }}"
 
       - name: Upload zip and tar.xz archive for release
-        uses: softprops/action-gh-release@ v1
+        uses: softprops/action-gh-release@v1
         if: needs.setup-fonts-matrix.outputs.rel_upload == 'true'
         with:
           draft: true
@@ -257,7 +257,7 @@ jobs:
           ./archive-font-patcher.sh
 
       - name: Upload font-patcher archive for release
-        uses: softprops/action-gh-release@ v1
+        uses: softprops/action-gh-release@v1
         if: needs.setup-fonts-matrix.outputs.rel_upload == 'true'
         with:
           draft: true
