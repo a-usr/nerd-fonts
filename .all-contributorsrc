@@ -1485,51 +1485,6 @@
       "contributions": [
         "code"
       ]
-    },
-    {
-      "login": "Zshoham",
-      "name": "Shohamza",
-      "avatar_url": "https://avatars.githubusercontent.com/u/16373114?v=4",
-      "profile": "https://github.com/Zshoham",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "nobk",
-      "name": "nobk",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4659870?v=4",
-      "profile": "https://github.com/nobk",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "saygo-png",
-      "name": "Saygo",
-      "avatar_url": "https://avatars.githubusercontent.com/u/131687037?v=4",
-      "profile": "http://saygo-png.github.io",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "kazerniel",
-      "name": "kazerniel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5689996?v=4",
-      "profile": "https://github.com/kazerniel",
-      "contributions": [
-        "a11y"
-      ]
-    },
-    {
-      "login": "landfillbaby",
-      "name": "Lucy Phipps",
-      "avatar_url": "https://avatars.githubusercontent.com/u/20822924?v=4",
-      "profile": "https://github.com/landfillbaby",
-      "contributions": [
-        "bug"
-      ]
     }
   ],
   "repoType": "github",

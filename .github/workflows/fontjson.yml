@@ -11,22 +11,28 @@ jobs:
   sync_pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch gh-pages
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-
       - name: Fetch files
-        uses: actions/checkout@v4
+        uses: Bhacaz/checkout-files@v2
         with:
-          sparse-checkout: bin/scripts/lib
-          path: master
+          files: bin/scripts/lib/fonts.json
+          branch: ${{ github.sha }}
 
       - name: Prepare file
         run: |
+          echo "Temp dir is /tmp"
+          cp bin/scripts/lib/fonts.json /tmp
+          ls -l /tmp/fonts.json
+
+      - name: Fetch gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - name: Prepare file 2
+        run: |
+          ls -l /tmp/fonts.json
           mkdir temp_data
-          cp master/bin/scripts/lib/fonts.json temp_data
-          ls -l temp_data
+          cp /tmp/fonts.json temp_data
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -41,7 +47,7 @@ jobs:
   update_gitignore:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Regenerate gitignore
         run: |

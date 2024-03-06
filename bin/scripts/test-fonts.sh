@@ -150,7 +150,7 @@ function test-fonts() {
   echo; echo
 
   echo "Nerd Fonts - Symbols original"
-  print-unicode-ranges e5fa e6b2
+  print-unicode-ranges e5fa e62b
   echo; echo
 
   echo "Nerd Fonts - Devicons"

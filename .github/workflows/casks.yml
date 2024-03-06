@@ -14,10 +14,11 @@ jobs:
     name: Create casks
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch stuff
-        uses: actions/checkout@v4
+      - name: Fetch stuff (no checkout)
+        uses: Bhacaz/checkout-files@v2
         with:
-          sparse-checkout: bin/scripts
+          files: bin/scripts/lib/fonts.json bin/scripts/fetch-archives.sh bin/scripts/generate-casks.sh
+          branch: ${{ github.head_ref || github.ref_name }}
       - name: Fetch release artifacts
         run: |
           cd bin/scripts
@@ -34,7 +35,7 @@ jobs:
           cd bin/scripts
           ./generate-casks.sh --setversion ${{ steps.releasetag.outputs.tag }}
       - name: Upload casks as artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: casks
           path: casks
@@ -52,7 +53,7 @@ jobs:
           PAK=$(echo "${FORK_TOKEN}" | tr 'A-Za-z' 'N-ZA-Mn-za-m')
           echo "pak=${PAK}" >> $GITHUB_OUTPUT
       - name: Checkout Homebrew
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           repository: ${{ env.HOMEBREW_FORK }}
           path: homebrew
@@ -66,7 +67,7 @@ jobs:
           git reset --hard upstream/master
           git push --force origin HEAD:nerdfonts
       - name: Retrieve new casks
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: casks
           path: casks
